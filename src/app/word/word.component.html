@@ -1,0 +1,31 @@
+<div class="row">
+<div class="col-sm-2 col-sm-push-2 votes">
+  <div class="ui statistic">
+    <div class="value">
+      {{ word.votes }}
+    </div>
+    <div class="label">
+      Points
+    </div>
+  </div>
+</div>
+<div class="col-sm-8 col-sm-push-2 words">
+  <p class="word">{{ word.word }}</p>
+  <ul class="ui big horizontal list voters">
+    <li class="item">
+      <a href (click)="voteUp()">
+        <i class="fa fa-thumbs-up" aria-hidden="true">
+          upvote
+        </i>
+      </a>
+    <li>
+    <li class="item">
+      <a href (click)="voteDown()">
+        <i class="fa fa-thumbs-down" aria-hidden="true">
+          downvote
+        </i>
+      </a>
+    <li>
+  </ul>
+</div>
+</div>
