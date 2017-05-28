@@ -1,20 +1,28 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-import { HttpModule } from '@angular/http';
+import { HttpModule, JsonpModule } from '@angular/http';
 
 import { AppComponent } from './app.component';
+import { AlertModule } from 'ngx-bootstrap';
+import { WordComponent } from './word/word.component';
+import { VocabService } from './vocab.service';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    WordComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
-    HttpModule
+    HttpModule,
+    JsonpModule,
+    AlertModule.forRoot()
   ],
-  providers: [],
+  providers: [
+    VocabService,
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -1,3 +1,21 @@
-<h1>
-  {{title}}
-</h1>
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12 text-center">
+      <h1>
+        {{title}}
+      </h1>
+      <form>
+        <input type="text" class="form-control"
+               required
+               name="word" #vocabword placeholder="enter vocab word here...">
+        <button class="btn btn-default" (click)="getDefinition(vocabword.value)">Submit</button>
+      </form>
+      <div class="ui grid posts">
+        <app-word
+        *ngFor="let word of words"
+        [word]="word">
+      </app-word>
+      </div>
+    <div>
+  </div>
+</div>
