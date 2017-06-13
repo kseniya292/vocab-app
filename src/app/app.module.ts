@@ -5,13 +5,11 @@ import { HttpModule, JsonpModule } from '@angular/http';
 
 import { AppComponent } from './app.component';
 import { AlertModule } from 'ngx-bootstrap';
-import { WordComponent } from './word/word.component';
 import { VocabService } from './vocab.service';
 
 @NgModule({
   declarations: [
-    AppComponent,
-    WordComponent
+    AppComponent
   ],
   imports: [
     BrowserModule,

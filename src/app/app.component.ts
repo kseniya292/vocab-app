@@ -11,23 +11,23 @@ import { VocabService } from './vocab.service';
   styleUrls: ['./app.component.css']
 }) //annotation: metadata added to our code
 
-export class AppComponent implements OnInit {
+export class AppComponent {
   title = 'Vocab App';
-  words: Word[];
+  vocabword: string;
 
-  constructor(private vocabService: VocabService) {}
+  constructor(private _vocabService: VocabService) {}
 
-  ngOnInit() { this.getDefinition(); }
+  // ngOnInit() { this.getDefinition(); }
 
-  getDefinition() {
-    this.vocabService.getDefinition()
+  getDefinition(vocabword) {
+    this._vocabService.getDefinition(vocabword)
                       .subscribe();
   }
 
-  // getDefinition(word: HTMLInputElement): boolean {
-  //   console.log(`The word is ${word.value}`);
-  //   this.words.push(new Word(word.value, 0));
-  //   word.value = '';
+  // getDefinition(vocabword: HTMLInputElement): boolean {
+  //   console.log(`The word is ${vocabword.value}`);
+  //   this.words.push(new Word(vocabword.value, 0));
+  //   vocabword.value = '';
   //   return false;
   // }
 
