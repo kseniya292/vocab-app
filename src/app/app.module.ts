@@ -9,7 +9,8 @@ import { VocabService } from './vocab.service';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    WordComponent
   ],
   imports: [
     BrowserModule,
