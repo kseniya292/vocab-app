@@ -1,0 +1,16 @@
+<div class="container">
+  <div class="row">
+    <div class="col-xs-8 col-xs-push-2 col-sm-6 col-sm-push-3 text-center">
+      <h1>
+        {{title}}
+      </h1>
+      <p>"What does that mean?"</p>
+      <form>
+        <input type="text" class="form-control"
+               required
+               name="word" #vocabword placeholder="enter vocab word here...">
+        <button class="btn btn-default" (click)="getDefinition(vocabword.value)">Submit</button>
+      </form>
+    </div>
+  </div>
+</div>
