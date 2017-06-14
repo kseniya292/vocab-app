@@ -24,9 +24,7 @@ export class VocabService {
         //using get request
         return this.http.get('http://www.dictionaryapi.com/api/v1/references/collegiate/xml/' + vocabword + '?key=f6b648e8-a858-4f2a-8abf-705db66d8897')
                    .map(res => {
-                     parseString(res.text(), function (err, result) {
-                       return result;
-                     })
+                     parseString(res.text(), (err, result) => result)
                    })
                    .catch((error:any) => Observable.throw(error || 'Server error'));
                  }
