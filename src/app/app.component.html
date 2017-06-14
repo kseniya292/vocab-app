@@ -1,16 +1,1 @@
-<div class="container">
-  <div class="row">
-    <div class="col-xs-12 text-center">
-      <h1>
-        {{title}}
-      </h1>
-      <form>
-        <input type="text" class="form-control"
-               required
-               name="word" #vocabword placeholder="enter vocab word here...">
-        <button class="btn btn-default" (click)="getDefinition(vocabword.value)">Submit</button>
-      </form>
-      <div></div>
-    <div>
-  </div>
-</div>
+<router-outlet></router-outlet>
