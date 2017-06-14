@@ -21,7 +21,7 @@ export class DefinitionComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.definition = this.route.snapshot.data['definition'];
+    this.definition = this.route.snapshot.data['definition'].definition;
   }
 
 }
