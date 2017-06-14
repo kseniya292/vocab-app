@@ -10,6 +10,8 @@ import { VocabService } from './vocab.service';
 import { DefinitionComponent } from './definition/definition.component';
 import { HomeComponent } from './home/home.component';
 
+import { DefinitionResolve } from './definition.resolve';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -28,8 +30,11 @@ import { HomeComponent } from './home/home.component';
         component: HomeComponent
       },
       {
-        path: 'definition',
-        component: DefinitionComponent
+        path: 'definition/:word',
+        component: DefinitionComponent,
+        resolve: {
+          definition: DefinitionResolve
+        }
       },
       {
         path: '',
@@ -40,6 +45,7 @@ import { HomeComponent } from './home/home.component';
   ],
   providers: [
     VocabService,
+    DefinitionResolve
   ],
   bootstrap: [AppComponent]
 })
