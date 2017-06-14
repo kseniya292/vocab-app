@@ -23,12 +23,7 @@ export class HomeComponent {
   ) {}
 
   getDefinition(vocabword) {
-    this._vocabService.getDefinition(vocabword)
-                      .subscribe(
-                        definition => this.definition = definition,
-                        error => console.error('Error: ' + error),
-                        () => console.log('Completed!'));
-    this._router.navigate(['/definition']);
+    this._router.navigate(['/definition', vocabword]);
   } //getDefinition
 
 }
