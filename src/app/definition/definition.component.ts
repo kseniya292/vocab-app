@@ -1,25 +1,26 @@
 import { Component, OnInit } from '@angular/core';
 import { AppComponent } from '../app.component';
 import { VocabService } from '../vocab.service';
-import { ActivatedRoute } from '@angular/router';
+import { DefinitionService } from '../definition.service';
 
 @Component({
   selector: 'app-definition',
   templateUrl: './definition.component.html',
   styleUrls: ['./definition.component.css']
 })
-export class DefinitionComponent implements OnInit {
+export class DefinitionComponent {
   word: string;
-  definition: string;
+  definition: any;
 
 
   constructor(
-    private route: ActivatedRoute
-  ) {}
+    private _definitionService: DefinitionService,
+  ) {
+    this.definition = this._definitionService.getData();
+  }
 
-  ngOnInit() {
-    this.definition = this.route.snapshot.data['definition'].definition;
-    this.word = this.route.snapshot.data['definition'].word;
+  ngOnInit () {
+
   }
 
 }
