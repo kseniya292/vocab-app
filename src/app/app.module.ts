@@ -7,10 +7,9 @@ import { RouterModule }   from '@angular/router';
 import { AppComponent } from './app.component';
 import { AlertModule } from 'ngx-bootstrap';
 import { VocabService } from './vocab.service';
+import { DefinitionService } from './definition.service';
 import { DefinitionComponent } from './definition/definition.component';
 import { HomeComponent } from './home/home.component';
-
-import { DefinitionResolve } from './definition.resolve';
 
 @NgModule({
   declarations: [
@@ -31,10 +30,7 @@ import { DefinitionResolve } from './definition.resolve';
       },
       {
         path: 'definition/:word',
-        component: DefinitionComponent,
-        resolve: {
-          definition: DefinitionResolve
-        }
+        component: DefinitionComponent
       },
       {
         path: '',
@@ -45,7 +41,7 @@ import { DefinitionResolve } from './definition.resolve';
   ],
   providers: [
     VocabService,
-    DefinitionResolve
+    DefinitionService
   ],
   bootstrap: [AppComponent]
 })

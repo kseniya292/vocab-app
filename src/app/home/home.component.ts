@@ -5,6 +5,7 @@ import { Observable } from 'rxjs/Observable';
 import { Router }   from '@angular/router';
 
 import { VocabService } from '../vocab.service';
+import { DefinitionService } from '../definition.service';
 import { DefinitionComponent } from '../definition/definition.component';
 
 @Component({
@@ -18,12 +19,29 @@ export class HomeComponent {
   definition: any;
 
   constructor(
+    private _definitionService: DefinitionService,
     private _vocabService: VocabService,
     private _router: Router
   ) {}
 
-  getDefinition(vocabword) {
+
+  getDefinition(vocabword : string) {
+    this._vocabService.getDefinition(vocabword)
+      .subscribe(
+        data => this._definitionService.saveDefinition(data),
+        error => console.log(error),
+      );
+
+    // call the vocab service, with subscribe method
+
+    // if an error occurs, display error on view
+
+    // else if success
+    // ?? pass data to definition component
+    // navigate to definition component
+
     this._router.navigate(['/definition', vocabword]);
   } //getDefinition
+
 
 }

@@ -19,10 +19,17 @@ export class VocabService {
   constructor(private http : Http) { }
 
 //fetch Word
-  getDefinition(vocabword: string) {
+  getDefinition(vocabword : string) {
         //using get request
         return this.http.get(`http://13.58.45.177/definition/${vocabword}`)
                    .map(res => res.json())
-                   .catch((error:any) => Observable.throw(error || 'Server error'));
+                   .catch((error) => {
+                     console.log('error ' + error);
+                   throw error;
+                 });
                  }
+  // getError(error: Response) {
+  //   console.error(error);
+  //   return Observable.throw(error.json().error || 'Server error');
+  // }
 } //export
