@@ -11,6 +11,7 @@
                name="word" #vocabword placeholder="enter vocab word here...">
         <button class="btn btn-default"  type="button" (click)="getDefinition(vocabword.value)">Submit</button>
       </form>
+      <h4>{{ errorMsg }}</h4>
     </div>
   </div>
 </div>

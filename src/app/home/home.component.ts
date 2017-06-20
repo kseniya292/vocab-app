@@ -17,6 +17,7 @@ export class HomeComponent {
   title = 'Vocab App';
   vocabword: string;
   definition: any;
+  errorMsg: string;
 
   constructor(
     private _definitionService: DefinitionService,
@@ -32,7 +33,7 @@ export class HomeComponent {
           this._definitionService.saveDefinition(data);
           this._router.navigate(['/definition', vocabword]);
         },
-        error => console.log(error),
+        error => this.errorMsg = error
       );
 
     // call the vocab service, with subscribe method
