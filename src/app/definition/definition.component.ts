@@ -16,7 +16,8 @@ export class DefinitionComponent {
   constructor(
     private _definitionService: DefinitionService,
   ) {
-    this.definition = this._definitionService.getData();
+    this.word = this._definitionService.getData().word;
+    this.definition = this._definitionService.getData().definition;
   }
 
   ngOnInit () {

@@ -14,13 +14,10 @@ export interface myData {
 export class DefinitionService {
 
   sharingData: myData = {name: "kseniya"}
-  sharingDef: myData = {name: {}}
 
   saveDefinition(definition) {
-    this.sharingData.name = definition.word;
-    this.sharingDef.name = definition.definition
+    this.sharingData.name = definition;
     console.log(this.sharingData.name);
-    console.log(this.sharingDef.name);
   }
 
   getData() {
