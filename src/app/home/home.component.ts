@@ -28,7 +28,10 @@ export class HomeComponent {
   getDefinition(vocabword : string) {
     this._vocabService.getDefinition(vocabword)
       .subscribe(
-        data => this._definitionService.saveDefinition(data),
+        data => {
+          this._definitionService.saveDefinition(data);
+          this._router.navigate(['/definition', vocabword]);
+        },
         error => console.log(error),
       );
 
@@ -39,8 +42,6 @@ export class HomeComponent {
     // else if success
     // ?? pass data to definition component
     // navigate to definition component
-
-    this._router.navigate(['/definition', vocabword]);
   } //getDefinition
 
 
