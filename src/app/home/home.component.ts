@@ -19,22 +19,29 @@ export class HomeComponent {
   vocabword: string;
   definition: any;
   errorMsg: string;
+  submitted: boolean;
+
+
 
   constructor(
     private _definitionService: DefinitionService,
     private _vocabService: VocabService,
     private _router: Router
-  ) {}
+  ) {
+    this.submitted = false;
+  }
 
 
   getDefinition(vocabword : string) {
+    this.submitted = true;
     this._vocabService.getDefinition(vocabword)
       .subscribe(
         data => {
           this._definitionService.saveDefinition(data);
           this._router.navigate(['/definition', vocabword]);
         },
-        error => this.errorMsg = error
+        // error => this.errorMsg = error
+         error => this.errorMsg = "server is down"
       );
 
     // call the vocab service, with subscribe method
