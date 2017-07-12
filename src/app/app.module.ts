@@ -3,6 +3,8 @@ import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpModule, JsonpModule } from '@angular/http';
 import { RouterModule }   from '@angular/router';
+import { MdInputModule, MdButtonModule } from '@angular/material';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { AppComponent } from './app.component';
 import { AlertModule } from 'ngx-bootstrap';
@@ -22,6 +24,9 @@ import { HomeComponent } from './home/home.component';
     FormsModule,
     HttpModule,
     JsonpModule,
+    MdInputModule,
+    MdButtonModule,
+    BrowserAnimationsModule,
     AlertModule.forRoot(),
     RouterModule.forRoot([
       {
