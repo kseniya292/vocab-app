@@ -1,4 +1,5 @@
-.form-control {
-  margin-top: 50px;
-  margin-bottom: 50px;
+.mat-input-container {
+  display: block;
+  margin-top: 60px;
+  margin-bottom: 60px;
 }
