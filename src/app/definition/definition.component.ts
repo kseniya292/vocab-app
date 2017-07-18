@@ -20,6 +20,16 @@ export class DefinitionComponent {
     this.definition = this._definitionService.getData().definition;
   }
 
+  postWord(word, definition) {
+    this._definitionService.postWord({
+      word: this.word,
+      defintion: this.definition
+    })
+      .subscribe(
+        res => console.log(res), 
+        err => console.log(err));
+  }
+
   ngOnInit () {
 
   }

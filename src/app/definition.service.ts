@@ -12,6 +12,7 @@ export interface myData {
 @Injectable()
 
 export class DefinitionService {
+  constructor(private http : Http) { }
 
   sharingData: myData = {name: "kseniya"}
 
@@ -23,6 +24,11 @@ export class DefinitionService {
   getData() {
     console.log(this.sharingData.name);
     return this.sharingData.name;
+  }
+
+  postWord(data) {
+    return this.http.post(`http://localhost:3000/list/`, data)
+      .map(res => res.json());
   }
 
 } //export
